@@ -1,0 +1,1 @@
+cat .\portainer-templates.txt | % { curl.exe $_ } | Out-String | Set-Content .\portainer_templates.json
