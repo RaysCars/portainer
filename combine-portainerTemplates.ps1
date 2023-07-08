@@ -1,14 +1,15 @@
-cat .\portainer-templates.txt | 
+$a = cat .\portainer-templates.txt | 
    Foreach-Object {
-   $a = curl.exe $_  | convertFrom-Json
-      $b = ($a.templates | ConvertTo-Json ).Split("`n")
-      $c = "{
-      `"version`": `"2`",
-      `"templates`":$b
+   curl.exe $_  | convertFrom-Json
+   
+} #foreach
+
+   
+$b = ($a.templates | ConvertTo-Json )
+$c = "{
+`"version`": `"2`",
+`"templates`":$b 
 }"
 
-   } #foreach
-   
-   $c | 
-      Out-String | 
-         Set-Content .\portainer_templates.json
+      
+$c | Out-String | Set-Content .\portainer_templates.json
