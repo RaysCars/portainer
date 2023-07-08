@@ -1,6 +1,6 @@
 {
-   "version": "2",
-   "templates":[
+      "version": "2",
+      "templates":[
   {
     "type": 1,
     "title": "Adguardhome-sync",
@@ -3821,6 +3821,4 @@
     "restart_policy": "unless-stopped"
   }
 ]
-
 }
-
